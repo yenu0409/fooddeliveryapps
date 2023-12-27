@@ -1,0 +1,49 @@
+<br /><br />
+<div class="centered">
+    Select Cateogry :   <select [(ngModel)]="category" (change)="getDishByCategory()">
+        <option [value]="100">All</option>
+        <option *ngFor="let item of getCategoryList" [value]="item?.value">{{item?.name}}</option>
+    </select>
+</div>
+<br />
+<div *ngIf="dishList.length===0" class="centered">
+    No Dish is available in list
+</div>
+<div *ngIf="dishList.length>0" class="centered">
+<table border="1" class="tbl">
+    <tr>
+        <th>Dish Id</th>
+        <th>Dish Name</th>
+        <th>Category</th>
+        <th>Dish Image</th>
+        <th>Description</th>
+        <th>Dish MRP</th>
+        <th>Quantity</th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let dish of dishList">
+        <td>{{dish?.dishId}}</td>
+        <td>{{dish?.dishname}}</td>
+        <td>{{dish?.category}}</td>
+        <td><img [src]="dish?.image" /></td>
+        <td>{{dish?.description}}</td>
+        <td>{{dish?.mrpPrice}}</td>
+        <td><input type="text" [id]="dish?.dishId"/></td>
+        <td>
+            <button class="btn btn-primary" (click)="addToCart(dish)" mat-raised-button color="primary">Add to Cart</button>
+        </td>
+</table>
+</div>
+<br />
+<div *ngIf="dishList.length>0" class="centered">
+    <app-paging
+    [totalItem]="totalItem"
+    [pageSize]="pageSize"
+    [offset]="offset"
+    (onNextPageClick)="onNextPageClick($event)"
+    (onPreviousPageClick)="onPreviousPageClick($event)"
+    (onFirstPageClick)="onFirstPageClick($event)"
+    (onLastPageClick)="onLastPageClick($event)"
+></app-paging>
+</div>
+<br />

@@ -1,0 +1,49 @@
+.register-tab {
+    width: 38%;
+    margin: 0 auto;
+    box-shadow: rgb(109 109 125 / 28%) 0px 4px 7px 12px;
+    padding: 20px;
+}
+
+.register-tab .main.centered {
+    text-align: center;
+}
+
+.register-tab table {
+    width: 100%;
+}
+
+.register-tab table tr td {
+    padding: 10px;
+}
+
+.register-tab .label {
+    font-weight: bold;
+}
+
+.register-tab input {
+    width: 90%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.register-tab button {
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.register-tab button:hover {
+    background-color: #0b7dda;
+}
+
+.register-tab .information {
+    color: #888;
+    font-size: 15px;
+}
+

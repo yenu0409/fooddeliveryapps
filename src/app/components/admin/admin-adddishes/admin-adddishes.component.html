@@ -1,0 +1,49 @@
+<br />
+<div class="add-dish-tab">
+
+<div class="centered">
+    <h1>Add Dish</h1>
+</div>
+<br />
+<div class="centered">
+<table >
+    <tr>
+        <td>Dish Name</td>
+        <td>
+            <input type="text" [(ngModel)]="dishname" />
+        </td>
+    </tr>
+    <tr>
+        <td>Category</td>
+        <td>
+            <select [(ngModel)]="category">
+                <option *ngFor="let item of getCategoryList" [value]="item?.value">{{item?.name}}</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Image</td>
+        <td>
+            <input type="text" [(ngModel)]="image"/>
+        </td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>
+            <input type="text" [(ngModel)]="description"/>
+        </td>
+    </tr>
+    
+    <tr>
+        <td>Mrp Price</td>
+        <td>
+            <input type="number" [(ngModel)]="mrpPrice"/>
+        </td>
+    </tr>
+    
+
+</table>
+</div>
+<br />
+<div class="centered"><button (click)="onAddDish()"  mat-raised-button color="primary">{{ isEdit ? 'Update' : 'Add Dish'}}</button></div>
+</div>
